@@ -1,261 +1,558 @@
-/*stylesheet for my resume*/
+        /* CSS Variables for consistent theming */
+        :root {
+            --darker-blue: #4a90e2;
+            --secondary-blue: #5ba0f2;
+            --light-blue: #a8c8ec;
+            --background-blue: #8BB8E8; /* Made 1 shade lighter */
+            --dark-blue: #2c5aa0;
+            --darker-blue: #1e3d6f;
+            --text-dark: #333333;
+            --text-medium: #555555;
+            --text-light: #777777;
+            --white: #ffffff;
+            --light-gray: #f8f9fa;
+            --medium-gray: #f0f0f0;
+            --border-radius: 5px;
+            --shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
 
-.sidenav {
-  height: 100%;
-  width: 200px; /* Increased width for breathing room */
-  position: fixed;
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
-  left: 0;
-  background-color: white;
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 20px;
-  padding-right: 15px;
-}
- 
+        /* Base styles with resume-like typography */
+        * {
+            box-sizing: border-box;
+        }
 
-.skills-container {
-  background-color: #f8f9fa;
-  padding: 2rem 0;
-  border-radius: 8px;
-}
+        body {
+            font-family: 'Lato', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-weight: 400;
+            line-height: 1.4;
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-blue);
+            font-size: 14px;
+        }
 
-.resume-highlight {
-  background-color: #f3f7ff;
-  border-left: 4px solid #007bff;
-  padding: 0.5rem 1rem;
-  margin-bottom: 1rem;
-}
+        /* Sidebar Navigation - Clean and cohesive */
+        .sidenav {
+            height: 100vh;
+            width: 240px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: var(--light-gray);
+            border-right: 1px solid var(--medium-gray);
+            padding: 2rem 1rem;
+            z-index: 1000;
+            overflow-y: auto;
+            box-shadow: var(--shadow);
+        }
 
-.nav-topper {
-    margin-left: 2px;
-    text-align: right;
-}
-#name {
-    font-size: 2.25em;
-    font-weight: bold;
-}
+        .nav-topper {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--medium-gray);
+        }
 
-#description {
-    font-size: 1.2em;
-}
+        #name {
+            font-family: 'Lato', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--darker-blue);
+            margin: 0 0 0.5rem 0;
+            line-height: 1.2;
+            letter-spacing: 0.3px;
+        }
 
-.read-more {
-  display: inline-block;
-  color: #0066cc;
-  text-decoration: none;
-  font-weight: 500;
-}
+        #description {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--text-medium);
+            margin: 0;
+            line-height: 1.3;
+        }
 
-/* The navigation menu links */
-.navbar-a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-family:'Sofia Sans Condensed', Helvetica, sans-serif;
-    font-size: 25px;
-    color: black;
-    display: block;
-  }
+        /* Social Icons - Clean and simple */
+        .icons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1.5rem 0 2rem 0;
+        }
 
-  /* When you mouse over the navigation links, change their color */
-  .sidenav a:hover {
-    color: darkgray;
-    text-align: right;
-  }
+        .icon-link {
+            color: var(--darker-blue);
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
 
-  .icons {
-    text-align: center;
-  }
+        .icon-link:hover {
+            color: var(--dark-blue);
+        }
 
+        /* Navigation Links - Resume-inspired clean style */
+        .navbar-a {
+            display: block;
+            padding: 0.75rem 1rem;
+            margin: 0.25rem 0;
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            transition: all 0.3s ease;
+            letter-spacing: 0.3px;
+        }
 
-  /* Style page content */
-  .main {
-    margin-left: 200px; /* Adjusted to match the new width of the sidenav */
-    padding: 0px 10px;
-    background-color: #77AEE6;
-    width: calc(100% - 200px);
-    box-sizing: border-box;
-}
-  
-.content {
-  margin-left: 200px;
-  width: calc(100% - 200px); /* make sure content area doesn't overflow */
-  padding: 20px;
-  background-color: #77AEE6;
-  box-sizing: border-box; /* Prevent overflow caused by padding */
-}
-body {
-    font-family: 'Sofia Sans Condensed', Helvetica, sans-serif;
-  }
+        .navbar-a:hover {
+            background-color: var(--medium-gray);
+            color: var(--darker-blue);
+        }
 
-.row {
-    max-width: 100%; /* Ensure the row takes the full width */
-}
-  .container {
-    background: #77AEE6;
-    max-width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 40px; /* Increase space between each section */
-  }
+        /* Main Content */
+        .content {
+            margin-left: 240px;
+            min-height: 100vh;
+            background-color: var(--background-blue);
+        }
 
-  .container ul {
-    padding-left: 20px; /* Indent the list items */
-  }
-  
-  .container-fluid.py-5 {
-    margin-bottom: 30px; /* Reduce gap between hero section and skills section */
-  }
+        .container, .container-fluid {
+            background: transparent;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
 
-  
-  h1 {
-   color:white !important;
-   background-color: #153B61;
-   width: 200px;
-   text-align: center;
-   border: 1px solid #153B61;
-   border-radius: 8px;
-  }
+        /* Typography with resume-inspired styling */
+        h1 {
+            font-family: 'Lato', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--white) !important;
+            background: var(--darker-blue);
+            padding: 1rem 2rem;
+            border-radius: var(--border-radius);
+            margin: 0 0 1.5rem 0;
+            display: inline-block;
+            box-shadow: var(--shadow);
+            letter-spacing: 0.5px;
+        }
 
-/* General h2 styles */
-h2 {
-  color: white !important;
-  background-color: #153B61;
-  text-align: center;
-  border: 1px solid #153B61;
-  border-radius: 8px;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  padding: 10px 30px; /* Adjust padding for text space */
-  white-space: nowrap; /* Prevents text from breaking into new lines */
-  display: inline-block; /* Ensures background only stretches as wide as the text */
-  box-sizing: border-box; /* Makes sure padding is included in the width calculation */
-}
+        h2 {
+            font-family: 'Lato', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--white) !important;
+            background: var(--darker-blue);
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius);
+            margin: 2rem 0 1.5rem 0;
+            display: inline-block;
+            box-shadow: var(--shadow);
+            text-transform: uppercase;
+            letter-spacing: 1.1px;
+        }
 
-/* Remove specific h2 rules for the #awards section, as general h2 styles are applied */
-#awards {
-  width: 100%; /* Ensure the container spans the full width */
-  padding-left: 0; /* Remove padding to allow full width */
-  padding-right: 0; /* Remove padding to allow full width */
-}
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin: 1.5rem 0 0.5rem 0;
+            line-height: 1.3;
+        }
 
-h3 {
-    font-size: 30px;
-    font-weight: 500;
-}
-h4 {
-    font-weight: 400;
-    font-size: 28px;
-}
+        h4 {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-medium);
+            margin: 1rem 0 0.5rem 0;
+        }
 
+        /* Professional summary styling */
+        .lead {
+            font-size: 0.95rem;
+            font-weight: 400;
+            color: var(--text-dark);
+            line-height: 1.4;
+            margin-bottom: 1.5rem;
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
 
-li {
-    font-size: 25px;
-    font-weight: 300;
-}
+        /* Experience entries with updated styling */
+        .experience-entry, .job-entry {
+            background: var(--medium-gray);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
 
-.lead {
-    font-size: 23px;
-    font-weight: 300;
-}
+        .experience-entry:hover, .job-entry:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
 
-#work-sample {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+        /* Updated job title and company styling */
+        .job-title, .company-role {
+            font-size: 1rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+            line-height: 1.3;
+        }
 
-/* work example cards */
-.article-card {
-  height: 100%;
-  overflow: hidden;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
+        .job-title strong, .company-role strong {
+            font-weight: 700;
+            color: #000;
+        }
 
-.article-card:hover {
-  transform: translateY(-5px);
-}
+        /* Updated location and date styling */
+        .job-location-date, .location-date {
+            color: var(--text-light);
+            font-size: 0.8rem; /* Smaller font */
+            font-style: italic;
+            margin-bottom: 0.75rem;
+            line-height: 1.2;
+        }
 
-.article-image {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
+        /* Increased font size for job descriptions */
+        .job-description, .experience-description {
+            margin-top: 0.5rem;
+        }
 
-.article-image-container {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
+        .job-description ul, .experience-description ul {
+            list-style: disc;
+            padding-left: 1.2rem;
+            margin: 0;
+        }
 
-.article-content {
-  padding: 15px;
-}
+        .job-description li, .experience-description li {
+            font-size: 1.05rem; /* Increased from 1rem */
+            color: var(--text-dark);
+            margin-bottom: 0.4rem;
+            line-height: 1.3;
+        }
 
-.article-overlay {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background-color: rgba(0,0,0,0.7);
-  color: white;
-  padding: 5px 10px;
-  border-radius: 3px;
-}
+        /* Skills Section with more breathing room */
+        .skills-container {
+            background: transparent;
+            border-radius: var(--border-radius);
+            margin: 2rem 0;
+            padding: 0 2rem; /* Added left and right padding */
+        }
 
-.article-headline {
-  display: block;
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 10px;
-  text-decoration: none;
-  line-height: 1.4;
-}
+        .skills-section {
+            margin-bottom: 2rem;
+        }
 
-.article-excerpt {
-  margin-bottom: 15px;
-  line-height: 1.5;
-}
+        .skills-section h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-dark);
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 0.5rem;
+        }
 
-.article-image-container {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.5rem;
+        }
 
-.article-image {
-  display: block;
-  width: 100%;
-  height: auto;
-  transition: transform 0.3s;
-}
+        .skill-item {
+            background: var(--medium-gray);
+            margin: 0.5rem 0;
+            padding: 0.75rem 1rem;
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--darker-blue);
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
 
-.container a {
-    color: black;
-}
-.article-headline:hover {
-    color:darkblue
-}
+        .skill-item:hover {
+            background: var(--darker-blue);
+            color: var(--white);
+            transform: translateX(4px);
+        }
 
-  /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-  @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-  }
+        /* Education section styling */
+        .education-section {
+            background: var(--medium-gray);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin: 1.5rem 0;
+        }
 
-  @media (max-width: 767px) {
-    .article-card {
-        margin-bottom: 20px;
-    }
+        .education-entry {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: var(--light-gray);
+            border-radius: var(--border-radius);
+        }
 
-    .content {
-        margin-left: 0;
-        max-width: 100%;
-    }
-    .sidenav {
-      position: relative;
-      width: 100%;
-      height: auto;
-  }
-}
+        .education-entry:last-child {
+            margin-bottom: 0;
+        }
+
+        .degree-program {
+            font-weight: 400;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            line-height: 1.2;
+            margin-bottom: 0.25rem;
+        }
+
+        .degree-program strong {
+            font-weight: 700;
+        }
+
+        .degree-year {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            font-style: italic;
+            line-height: 1.2;
+        }
+
+        /* Awards section styling */
+        .awards-section {
+            background: var(--medium-gray);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin: 1.5rem 0;
+        }
+
+        .award-entry {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: var(--light-gray);
+            border-radius: var(--border-radius);
+        }
+
+        .award-entry:last-child {
+            margin-bottom: 0;
+        }
+
+        .award-title {
+            font-weight: 700; /* Bold award titles */
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            line-height: 1.2;
+            margin-bottom: 0.25rem;
+        }
+
+        .award-description {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            font-style: italic;
+            line-height: 1.2;
+        }
+
+        /* Memberships section */
+        .memberships-section {
+            background: var(--medium-gray);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin: 1.5rem 0;
+        }
+
+        .memberships-item {
+            margin: 0.5rem 0;
+            padding: 0.75rem 1rem;
+            background: var(--light-gray);
+            border-radius: var(--border-radius);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        /* Article Cards styling remains the same */
+        .article-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            height: 100%;
+            margin-bottom: 2rem;
+        }
+
+        .article-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .article-image-container {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .article-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .article-card:hover .article-image {
+            transform: scale(1.05);
+        }
+
+        .article-overlay {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: rgba(30, 61, 111, 0.9);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .article-content {
+            padding: 1.5rem;
+        }
+
+        .article-headline {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            text-decoration: none;
+            line-height: 1.3;
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+
+        .article-headline:hover {
+            color: var(--darker-blue);
+        }
+
+        .article-excerpt {
+            color: var(--text-medium);
+            font-size: 0.9rem;
+            line-height: 1.4;
+            margin-bottom: 1rem;
+        }
+
+        .article-skills {
+            background: var(--medium-gray);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin: 1rem 0;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .read-more {
+            color: var(--darker-blue);
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.9rem;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        .read-more:hover {
+            border-bottom-color: var(--darker-blue);
+        }
+
+        /* Links styling */
+        a {
+            color: var(--text-dark);
+            text-decoration: underline;
+            text-decoration-color: var(--text-dark);
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--darker-blue);
+            text-decoration-color: var(--darker-blue);
+        }
+
+        /* Footer styling */
+        footer {
+            background: var(--medium-gray);
+            border-top: 1px solid var(--medium-gray);
+            margin-top: 3rem;
+            padding: 2rem;
+        }
+
+        footer p {
+            color: var(--text-medium);
+            margin: 0.5rem 0;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .sidenav {
+                position: relative;
+                width: 100%;
+                height: auto;
+                padding: 1.5rem;
+            }
+            
+            .content {
+                margin-left: 0;
+            }
+            
+            .container, .container-fluid {
+                padding: 1rem;
+            }
+            
+            .skills-container {
+                padding: 0 1rem;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+                padding: 0.75rem 1.5rem;
+            }
+            
+            h2 {
+                font-size: 1rem;
+                padding: 0.6rem 1.2rem;
+            }
+            
+            .icons {
+                gap: 0.75rem;
+            }
+            
+            body {
+                font-size: 13px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+                padding: 0.6rem 1.2rem;
+            }
+            
+            h2 {
+                font-size: 0.95rem;
+                padding: 0.5rem 1rem;
+            }
+            
+            .lead {
+                font-size: 0.9rem;
+            }
+            
+            body {
+                font-size: 12px;
+            }
+        }
